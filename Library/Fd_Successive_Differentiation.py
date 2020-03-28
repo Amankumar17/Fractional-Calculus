@@ -6,6 +6,8 @@ def successive_differentiation(mu,alpha):
     t=[]
     dio=[]
     dfo=[]
+    print(math.gamma((mu+1)/math.gamma(mu-alpha+1)),end="")
+    print("t^"+str(mu-alpha))
     while(i<10):
         t.append(i)
         f.append(pow(t[-1],mu))
@@ -13,8 +15,10 @@ def successive_differentiation(mu,alpha):
         dfo.append((math.gamma(mu+1)/math.gamma(mu-alpha+1))*pow(t[-1],(mu-alpha)))
         i+=0.01
 
-    print(len(t),len(f),len(dio),len(dfo))
+    #print(len(t),len(f),len(dio),len(dfo))
     plt.plot(t,f,color="blue")
     plt.plot(t,dio,color="red")
     plt.plot(t,dfo,color="green")
+    
+#function call:
 successive_differentiation(1.2,0.1)
